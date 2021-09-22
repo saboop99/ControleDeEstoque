@@ -26,26 +26,35 @@ namespace ControleDeEstoque
             _quantidade = quantidade;
                 
         }
-
-       
-        
-        // utilização do Get (encapsulamento), para obter o nome
-        public string GetNome()
+        // Execução do Properties, sendo "Nome" como se fosse um atributo
+        public string Nome
         {
-            return _nome;
+            //método GET para obter o nome
+            get { return _nome; }
+            // método SET para definir o nome
+            set
+            {
+                //condicional If para definir o nome (diferente de nulo e maior que 1)
+                if(value!=null && value.Length > 1)
+                {
+                    _nome = value;
+                }
+            }
         }
-        
-        // utilização do Set(encapsulamento), para definir o nome
-        public void SetNome(string nome)
+
+        // Execução do Properties, sendo "Preço" como se fosse um atributo
+        public double Preço
         {
-            _nome = nome;
+            //método GET para obter o preço
+            get { return _preço; }
         }
 
-        // utilização do Get (encapsulamento), para obter a quantidade
-        public int GetQuantidade()
+        // Execução do Properties, sendo "Quantidade" como se fosse um atributo
+        public int Quantidade
         {
-            return _quantidade;
-        } 
+            //método GET para obter a quantidade
+            get { return _quantidade; }
+        }
         //operação matemática para definir o valor total em estoque
         public double ValorTotalEmEstoque()
         {
